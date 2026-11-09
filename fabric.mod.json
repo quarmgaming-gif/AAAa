@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "carbclient",
+  "version": "${version}",
+  "name": "CARB CLIENT",
+  "description": "Client GUI starter for private-world and server testing.",
+  "authors": ["CARB CLIENT"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": ["pl.carbclient.CarbClient"] },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
