@@ -3,14 +3,13 @@ name: NEXUS VISUALS Build
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [main, master]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
   build:
-    name: Build NEXUS VISUALS
     runs-on: ubuntu-latest
 
     steps:
@@ -21,17 +20,15 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '21'
-          distribution: 'temurin'
+          distribution: temurin
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build mod
-        run: |
-          chmod +x gradlew
-          ./gradlew build
+      - name: Build NEXUS VISUALS
+        run: gradle build
 
-      - name: Upload NEXUS VISUALS
+      - name: Upload mod
         uses: actions/upload-artifact@v4
         with:
           name: NEXUS-VISUALS
